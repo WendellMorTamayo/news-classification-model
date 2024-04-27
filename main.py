@@ -10,16 +10,15 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import re
 from sklearn.model_selection import train_test_split
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Embedding, LSTM, Bidirectional
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Embedding, LSTM, Bidirectional
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from keras import regularizers
-import tensorflow as tf
+from tensorflow.keras import regularizers
+
 import seaborn as sns
 from sklearn.utils import resample
 from sklearn.metrics import confusion_matrix
-from tensorflow.keras.models import save_model
 
 # nltk.download("punkt")
 # nltk.download("stopwords")
@@ -146,10 +145,10 @@ plot_cm(
     enc.categories_[0]
 )
 
-model.save('models/mod.keras')
+# model.save('models/mod.keras')
 
-tensorflow.saved_model.save(model, "models/model.keras")
-tensorflow.saved_model.save(model, "models/model")
-with open('models/model.pkl', 'wb') as file:
+# tensorflow.saved_model.save(model, "models/model.keras")
+# tensorflow.saved_model.save(model, "models/model")
+with open('models/models.pkl', 'wb') as file:
     pickle.dump(model, file)
 

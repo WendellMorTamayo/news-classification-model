@@ -17,9 +17,8 @@ with open('models/encoder.npy', 'rb') as f:
 loaded_model = pickle.load(open('models/model.pkl', 'rb'))
 
 
-# Function to preprocess text data (replace with your preprocessing steps)
+# Function to preprocess text data
 def preprocess_text(text):
-    # Lowercase, remove punctuation, tokenize, etc.
     text = text.lower()
     text = re.sub(r'[^\w\s]', '', text)
     text = text.split()
