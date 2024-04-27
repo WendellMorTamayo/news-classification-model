@@ -148,8 +148,8 @@ plot_cm(
 
 model.save('models/mod.keras')
 
-# tensorflow.saved_model.save(model, "models/model.keras")
-# tensorflow.saved_model.save(model, "models/model")
-# with open('models/model.pkl', 'wb') as file:
-#     pickle.dump(model, file)
+tensorflow.saved_model.save(model, "models/model.keras")
+tensorflow.saved_model.save(model, "models/model")
+with open('models/model.pkl', 'wb') as file:
+    pickle.dump(model, file)
 
